@@ -2,6 +2,10 @@
 
 ## Master
 
+## v115 (2018-01-25
+
+- Add metrics to monitor specific cases of failure (#509)
+
 ## v114 (2017-11-16)
 
 - Don't default to npm 5.x if the user already has npm >= 5 (#499)
