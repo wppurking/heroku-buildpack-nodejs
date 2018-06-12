@@ -10,7 +10,7 @@ install_yarn() {
     fail_bin_install yarn $version;
   fi
 
-  echo "Downloading and installing yarn ($number)..."
+  echo "Downloading and installing yarn ($number)... ($url)"
   local code=$(curl "$url" -L --silent --fail --retry 5 --retry-max-time 15 -o /tmp/yarn.tar.gz --write-out "%{http_code}")
   if [ "$code" != "200" ]; then
     echo "Unable to download yarn: $code" && false
@@ -37,7 +37,7 @@ install_nodejs() {
     fail_bin_install node $version;
   fi
 
-  echo "Downloading and installing node $number..."
+  echo "Downloading and installing node $number... ($url)"
   local code=$(curl "$url" -L --silent --fail --retry 5 --retry-max-time 15 -o /tmp/node.tar.gz --write-out "%{http_code}")
   if [ "$code" != "200" ]; then
     echo "Unable to download node: $code" && false
@@ -58,7 +58,7 @@ install_iojs() {
     fail_bin_install iojs $version;
   fi
 
-  echo "Downloading and installing iojs $number..."
+  echo "Downloading and installing iojs $number... ($url)"
   local code=$(curl "$url" --silent --fail --retry 5 --retry-max-time 15 -o /tmp/iojs.tar.gz --write-out "%{http_code}")
   if [ "$code" != "200" ]; then
     echo "Unable to download iojs: $code" && false
