@@ -22,7 +22,9 @@ STDLIB_FILE=$(mktemp -t stdlib.XXXXX)
 
 ### Load dependencies
 
-curl --silent --retry 5 --retry-max-time 15 'https://lang-common.s3.amazonaws.com/buildpack-stdlib/v7/stdlib.sh' > "$STDLIB_FILE"
+# curl --silent --retry 5 --retry-max-time 15 'https://lang-common.s3.amazonaws.com/buildpack-stdlib/v7/stdlib.sh' > "$STDLIB_FILE"
+# NETCN: 切换国内
+curl --silent --retry 5 --retry-max-time 15 'http://pa7s774ri.bkt.clouddn.com/buildpack-stdlib/v7/stdlib.sh' > "$STDLIB_FILE"
 source "$STDLIB_FILE"
 source $BP_DIR/lib/output.sh
 source $BP_DIR/lib/json.sh
